@@ -32,8 +32,8 @@ async def register(user: User):
     return {"message": "User registered successfully", "id": user_dict["id"]}
 
 
-@router.post("/register/Technicians")
-async def register_teacher(technician: Technician):
+@router.post("/register/technicians")
+async def register_technician(technician: Technician):
     if await technicians_collection.find_one({"email": technician.email}):
         raise HTTPException(status_code=400, detail="Email already registered")
 
@@ -42,7 +42,7 @@ async def register_teacher(technician: Technician):
     technician_dict["password"] = hash_password(technician.password)
 
     await technicians_collection.insert_one(technician_dict)
-    return {"message": "Teacher registered successfully", "id": technician_dict["id"]}
+    return {"message": "technicians registered successfully", "id": technician_dict["id"]}
 
 @router.post("/login")
 async def login(email: str, password: str):
