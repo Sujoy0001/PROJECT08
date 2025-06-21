@@ -1,0 +1,12 @@
+/* Ensure this file is processed by Tailwind CSS via PostCSS.
+   If you see 'Unknown at rule @tailwind', make sure your build tool is configured correctly. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply w-full p-2 border border-gray-300 rounded;
+}
+.btn {
+  @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700;
+}
