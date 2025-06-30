@@ -13,6 +13,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def home():
+    return {"message": "Welcome to the FTech API!"}
+
 app.include_router(auth_routes.router, prefix="/auth", tags=["auth"])
 app.include_router(technician_profile_routes.router, tags=["technicians"])
 app.include_router(show_all.router, prefix="/show", tags=["show"])
