@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import auth_routes, technician_profile_routes, show_all
+from routes import auth_routes, technician_profile_routes, show_all, reviews
 
 app = FastAPI()
 
@@ -20,3 +20,4 @@ async def home():
 app.include_router(auth_routes.router, prefix="/auth", tags=["auth"])
 app.include_router(technician_profile_routes.router, tags=["technicians"])
 app.include_router(show_all.router, prefix="/show", tags=["show"])
+app.include_router(reviews.router, tags=["review"])

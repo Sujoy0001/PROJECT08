@@ -3,7 +3,6 @@ from typing import List, Optional, Literal
 
 class TechnicianProfile(BaseModel):
     
-     
     technician_id: int  # foreign key to the technician
     service_category: Literal[
         "Electrician", "Plumber", "AC Repair", "Carpenter", 
