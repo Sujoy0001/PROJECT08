@@ -1,11 +1,12 @@
 from pydantic import BaseModel, EmailStr
-from typing import Literal
+from typing import Literal, Optional
 
 class User(BaseModel):
     id: int
     username: str
     email: EmailStr
     full_name: str | None = None
+    profile_img: Optional[str] = None  # URL or base64
     password: str
     role: Literal['user']
     
